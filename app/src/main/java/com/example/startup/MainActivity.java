@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         password = findViewById(R.id.editTextTextPassword);
         password.getText().toString();
         imageView2 = findViewById(R.id.imageView2);
-        imageView2.setImageDrawable();
+//        imageView2.setImageDrawable();
 
 
 
@@ -69,12 +69,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d(TAG, "The program will Stopped");
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "The program will Destroyed");
-
-    }
 
     @Override
     public void onClick(View v) {
