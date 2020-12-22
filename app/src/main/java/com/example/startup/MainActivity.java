@@ -1,4 +1,5 @@
 package com.example.startup;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.DragStartHelper;
 
@@ -14,17 +15,14 @@ import android.widget.ImageView;
 
 import javax.security.auth.callback.PasswordCallback;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText name;
     private EditText password;
     private Button button;
     private final String TAG = "-------------------------------";
     private ImageView imageView2;
-
-    
-
-
+    private ConnectDB connectDB = new ConnectDB(this);
 
 
     @Override
@@ -39,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         password.getText().toString();
         imageView2 = findViewById(R.id.imageView2);
 //        imageView2.setImageDrawable();
-
 
 
     }
@@ -73,13 +70,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if (v.equals(button)) {
-            startActivity(new Intent(this, LoginActivity.class));
-
+           // startActivity(new Intent(this, LoginActivity.class));
+            this.connectDB.add("Samvel", "Avagyan", 12, "7a");
+            startActivity(new Intent(this, NextActivity.class));
         }
-
-        //Barev
-        //aaaaaaaaaaaa
-        //bdfjksdfajhf
 
     }
 
